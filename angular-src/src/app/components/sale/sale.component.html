@@ -1,0 +1,43 @@
+<div class="page-header text-center">
+  <h1>Sale Detail</h1>
+</div>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    {{client}} ({{userTransaction}})
+    <p class="pull-right">Fecha : {{date | date: 'dd/MM/yyyy hh:mm:ss'}}</p>
+  </div>
+  <div class="panel-body">
+    <!--<p>Total: {{total | currency:'USD':true:'1.2-2'}}</p>-->
+    <p>Estado del pedido: <span class="text-success">{{status ? 'ACTIVO' : 'BAJA'}}</span></p>
+  </div>
+
+  <!-- Table -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="text-center text-info">Descripcion</th>
+        <th class="text-center text-info">Cantidad</th>      
+        <th class="text-center text-info">Precio unitario</th>
+        <th class="text-center text-info">Subtotal</th>        
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="text-right">Total: {{total | currency:'USD':true:'1.2-2'}}</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.description}}</td>
+        <td class="text-right">{{item.qty}}</td>
+        <td class="text-right">{{item.unitPrice | currency:'USD':true:'1.2-2'}}</td>
+        <td class="text-right">{{item.subTotal | currency:'USD':true:'1.2-2'}}</td>
+      </tr>    
+    </tbody>
+  </table>
+</div>
+<a [routerLink]="['/sales']" class="btn btn-primary pull-right">Go back</a>

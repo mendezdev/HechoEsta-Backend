@@ -1,0 +1,31 @@
+<!--<ul class="collection with-header">
+  <li class="collection-header"><h4>Carpetas</h4><span>Cantidad: {{countFolders}}</span></li>
+  <li *ngFor="let folder of folders" class="collection-item avatar">
+    <img src="../../assets/img/mansion1.jpg" alt="" class="circle">
+    <h6 class="title bold">{{folder.description}}</h6>
+    <button (click)="addToCart(folder._id)" class="right btn green">Agregar</button>
+    <p class="condensed light">Precio unitario: <span class="thin">{{folder.unitPrice | currency:'USD':true}}</span><br>
+    <p class="condensed light">Cantidad de paginas: <span class="thin">{{folder.pages}}</span></p>
+    <p>{{fromParent}}</p>
+  </li>
+</ul>-->
+<div class="page-header text-center">
+  <h1>Carpetas</h1>
+  <small>Cantidad: {{countFolders}}</small>
+</div>
+<div class="row">
+  <div *ngFor="let folder of folders" class="col-md-3">
+    <div class="thumbnail">
+      <img [src]="folder.filePath" alt="...">
+      <div class="caption">
+        <!--<strong>{{folder.description}}</strong><br>-->
+        <h4>{{folder.description}}</h4>
+        <small>Precio unitario: {{folder.unitPrice | currency:'USD':true}}</small><br>
+        <small>Cantidad de paginas: {{folder.pages}}</small>
+        <p>
+            <button (click)="addToCart(folder._id)" class="btn btn-primary btn-block" role="button">Agregar</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<h1 class="text-center">Carrito</h1>
+<hr>
+<div *ngIf="folders" >
+    <div *ngIf="folders.length == 0">
+        <p>NO HAY CARPETAS SELECCIONADAS</p>
+    </div>
+    <div *ngFor="let f of folders" class="row">
+        <div class="col-md-10">
+            <span>{{f.description}}: x {{f.qty}} </span><span >{{f.subtotal | currency:'USD':true}}</span>
+        </div>        
+        <div class="col-md-2 pull-right">
+            <img (click)="restFolder(f.id)" src="../../assets/img/minus-circle.png" alt="" >
+        </div>        
+    </div>
+</div>
+<hr>
+<div>
+    <div>
+        <h5>Total: <span class="">{{total | currency:'USD':true}}</span></h5>
+    </div>
+    <button (click)="comprar()" class="btn btn-block btn-success">COMPRAR</button>
+</div>
+
+

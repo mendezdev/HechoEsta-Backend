@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-md-9">
+    <app-folders (sendFolder)="handleSendFolder($event)" [folders]="folders" [countFolders]="countFolders"></app-folders>
+  </div>
+  <div class="col-md-3">
+    <app-cart [folders]="foldersToSend" [total]="total" (restUnit)="handleRestUnit($event)" (sendSale)="handleSale($event)"></app-cart>
+  </div>
+</div>

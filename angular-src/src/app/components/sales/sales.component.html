@@ -1,0 +1,26 @@
+<div class="page-header text-center">
+  <h1>Sales</h1>
+  <small>Cantidad: {{countSales}}</small>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Usuario Transacción</th>      
+      <th>Total</th>
+      <th>Fecha</th>
+      <th>Estado</th>
+      <th>Detalle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sale of sales">
+      <td>{{sale.client}}</td>
+      <td>{{sale.userTransaction}}</td>
+      <td>{{sale.total | currency:'USD':true:'1.2-2'}}</td>
+      <td>{{sale.date | date: 'dd/MM/yyyy hh:mm:ss'}}</td>
+      <td>{{sale.status ? 'Activo' : 'Desactivo'}}</td>
+      <td><a (click)="onVerClick(sale._id)" class="btn btn-primary btn-xs">Ver</a></td>
+    </tr>    
+  </tbody>
+</table>
