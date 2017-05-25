@@ -1,5 +1,5 @@
 # Hecho Esta
-Is a simple app demo for orders and shipments
+Is a simple app demo for orders and shipments (not finished)
 
 ## Install dependencies for backend
 Go to the root of this project with the terminal and type `npm install`
