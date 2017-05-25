@@ -11,7 +11,7 @@ Go to the `angular-src` folder in the root and with the terminal type `npm insta
 The storage for this app is MongoDB. By default is configure to run in `mongodb://127.0.0.1/HechoEsta` locally.
 You can change this configuration, going to the `config/database.js` file in the root.
 
-## Run the server.
+## Run the Node server.
 I recommend you to install nodemon globally and run the server by typing "nodemon" with the terminal in the root folder.
 By default the server runs in `localhost:8080` but this if you build the angular app.
 
